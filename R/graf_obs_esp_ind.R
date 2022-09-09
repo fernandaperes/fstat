@@ -68,8 +68,9 @@ graf_obs_esp_ind <- function(dados, v1, v2, cat_graf_v2, xlab = "",
     theme_classic() +
     theme(legend.position = "bottom")
 
-  if(isTRUE(asteriscos)){g <- g + geom_text(aes(y = Valor+2, label = rotulos),
-                                            position = position_dodge(width = 0.9), size = 4.5)}else{}
+  if(isTRUE(asteriscos)){
+    g <- g + geom_text(aes(y = Valor+2, label = rotulos),
+                       position = position_dodge(width = 0.9), size = 4.5)}else{}
 
   return(g)
 
