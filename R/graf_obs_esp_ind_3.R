@@ -7,6 +7,7 @@
 #' @param filllab Título do preechimento (v2)
 #' @param cor Cores das barras
 #' @param MacDonald Usar correção de MacDonald para os resíduos?
+#' @param asteriscos
 #'
 #' @return
 #' @export
@@ -14,9 +15,12 @@
 #' @examples
 graf_obs_esp_ind_3 <- function(dados, v1, v2, xlab = "", filllab = "",
                                cor = c("grey75", "grey45"),
+                               asteriscos = T,
                                MacDonald = F){
 
   library(reshape2)
+  library(ggplot2)
+  library(dplyr)
 
   v1s <- deparse(substitute(v1))
   v2s <- deparse(substitute(v2))
@@ -77,14 +81,15 @@ graf_obs_esp_ind_3 <- function(dados, v1, v2, xlab = "", filllab = "",
     geom_bar(aes(y = Observado), position = "dodge", stat = "identity") +
     geom_bar(aes(y = Esperado), position = "dodge", stat = "identity",
              color = "black", alpha = 0, show.legend = F) +
-    geom_text(aes(y = max, label = sinal),
-              position = position_dodge(width = 0.9), size = 4.5,
-              vjust = 0.2) +
     labs(y = "Frequência (n)", x = xlab, fill = filllab) +
     scale_fill_manual(values = cor) +
     scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
     theme_classic() +
     theme(legend.position = "bottom")
+
+  if(isTRUE(asteriscos)){g <- g + geom_text(aes(y = max, label = sinal),
+                                            position = position_dodge(width = 0.9), size = 4.5,
+                                            vjust = 0.2)}else{}
 
   return(g)
 

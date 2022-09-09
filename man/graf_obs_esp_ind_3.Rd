@@ -11,6 +11,7 @@ graf_obs_esp_ind_3(
   xlab = "",
   filllab = "",
   cor = c("grey75", "grey45"),
+  asteriscos = T,
   MacDonald = F
 )
 }
@@ -26,6 +27,8 @@ graf_obs_esp_ind_3(
 \item{filllab}{Título do preechimento (v2)}
 
 \item{cor}{Cores das barras}
+
+\item{asteriscos}{}
 
 \item{MacDonald}{Usar correção de MacDonald para os resíduos?}
 }

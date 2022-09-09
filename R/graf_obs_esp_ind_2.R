@@ -6,6 +6,7 @@
 #' @param xlab Título do eixo x
 #' @param cor Cor das barras
 #' @param MacDonald Usar correção de MacDonald para os resíduos?
+#' @param asteriscos Incluir asteriscos no gráfico?
 #'
 #' @return
 #' @export
@@ -13,6 +14,7 @@
 #' @examples
 graf_obs_esp_ind_2 <- function(dados, v1, v2, xlab = "",
                                cor = c("grey75", "grey45"),
+                               asteriscos = T,
                                MacDonald = F){
 
   library(reshape2)
@@ -59,8 +61,6 @@ graf_obs_esp_ind_2 <- function(dados, v1, v2, xlab = "",
   g <- banco_graf %>%
     ggplot(aes(x = {{v1}}, y = Valor, fill = Resultado)) +
     geom_bar(position = "dodge", stat = "identity") +
-    geom_text(aes(y = Valor, label = rotulos),
-              position = position_dodge(width = 0.9), size = 4.5) +
     labs(y = "Frequência (n)", x = xlab, fill = NULL, vjust = -1) +
     scale_fill_manual(values = cor) +
     scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
@@ -69,6 +69,9 @@ graf_obs_esp_ind_2 <- function(dados, v1, v2, xlab = "",
     theme(legend.position = "bottom",
           strip.placement = "outside",
           strip.background = element_rect(fill = NA, color = NA))
+
+  if(isTRUE(asteriscos)){g <- g + geom_text(aes(y = Valor, label = rotulos),
+                                            position = position_dodge(width = 0.9), size = 4.5)}else{}
 
   return(g)
 
