@@ -7,7 +7,7 @@
 #' @param filllab Título do preechimento (v2)
 #' @param cor Cores das barras
 #' @param MacDonald Usar correção de MacDonald para os resíduos?
-#' @param asteriscos
+#' @param asterisco Incluir asteriscos no gráfico?
 #'
 #' @return
 #' @export
@@ -15,7 +15,7 @@
 #' @examples
 graf_obs_esp_ind_3 <- function(dados, v1, v2, xlab = "", filllab = "",
                                cor = c("grey75", "grey45"),
-                               asteriscos = T,
+                               asterisco = T,
                                MacDonald = F){
 
   library(reshape2)
@@ -87,7 +87,7 @@ graf_obs_esp_ind_3 <- function(dados, v1, v2, xlab = "", filllab = "",
     theme_classic() +
     theme(legend.position = "bottom")
 
-  if(isTRUE(asteriscos)){g <- g + geom_text(aes(y = max, label = sinal),
+  if(isTRUE(asterisco)){g <- g + geom_text(aes(y = max, label = sinal),
                                             position = position_dodge(width = 0.9), size = 4.5,
                                             vjust = 0.2)}else{}
 

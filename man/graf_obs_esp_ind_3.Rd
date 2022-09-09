@@ -11,7 +11,7 @@ graf_obs_esp_ind_3(
   xlab = "",
   filllab = "",
   cor = c("grey75", "grey45"),
-  asteriscos = T,
+  asterisco = T,
   MacDonald = F
 )
 }
@@ -28,7 +28,7 @@ graf_obs_esp_ind_3(
 
 \item{cor}{Cores das barras}
 
-\item{asteriscos}{}
+\item{asterisco}{Incluir asteriscos no gráfico?}
 
 \item{MacDonald}{Usar correção de MacDonald para os resíduos?}
 }
