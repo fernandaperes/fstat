@@ -32,9 +32,6 @@ graf_obs_esp_ind_3(
 
 \item{MacDonald}{Usar correção de MacDonald para os resíduos?}
 }
-\value{
-
-}
 \description{
 Gráfico dos valores observados e esperados para o qui-quadrado de independência, com barras vazias
 }
