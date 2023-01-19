@@ -13,7 +13,7 @@
 p_val <- function(x) {
 
   ifelse(x < 0.001, "< 0,001",
-         scales::number(x, accuracy = 0.001, decimal.mark = dm))
+         scales::number(x, accuracy = 0.001, decimal.mark = ","))
 
   return(x)
 
