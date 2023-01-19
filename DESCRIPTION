@@ -13,4 +13,4 @@ RoxygenNote: 7.2.3
 URL: https://github.com/fernandaperes/fstat
 BugReports: https://github.com/fernandaperes/fstat/issues
 Imports: 
-    magrittr, ggplot2, dplyr, rstatix, reshape2
+    magrittr, ggplot2, dplyr, rstatix, reshape2, broom, broom.helpers, tibble
