@@ -9,6 +9,12 @@
 #' @examples
 reg_linear <- function(mod, add_global_p = F){
 
+  library(tibble)
+  library(broom)
+  library(broom.helpers)
+  library(dplyr)
+  library(ggplot2)
+
   tabela <- mod %>%
     broom.helpers::tidy_and_attach(conf.int = TRUE, exponentiate = F) %>%
     broom.helpers::tidy_add_estimate_to_reference_rows() %>%
