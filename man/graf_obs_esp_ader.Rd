@@ -23,9 +23,6 @@ graf_obs_esp_ader(
 
 \item{cor}{Cor das barras}
 }
-\value{
-
-}
 \description{
 Gráfico dos valores observados e esperados para o qui-quadrado de aderência
 }
