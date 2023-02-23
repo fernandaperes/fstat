@@ -2,10 +2,12 @@
 
 export("%>%")
 export(arred)
+export(eta_cochranq)
 export(forest_linear)
 export(graf_obs_esp_ader)
 export(graf_obs_esp_ind)
 export(graf_obs_esp_ind_2)
 export(graf_obs_esp_ind_3)
 export(p_val)
+export(r_cochranq)
 importFrom(magrittr,"%>%")
