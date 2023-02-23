@@ -17,7 +17,7 @@ eta_cochranq <- function(teste){
   df <- teste$df
   # df corresponde a k-1
 
-  eta <- q/(b*df)
+  eta <- unname(q/(b*df))
 
   return(eta)
 
