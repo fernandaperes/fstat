@@ -14,7 +14,13 @@ r_cochranq <- function(df){
 
   b <- dim(df)[1]
   k <- dim(df)[2]
-  df <- df %>% mutate(mutate(across(everything(), ~ as.numeric(.)-1)))
+
+  tipo <- class(df[[1]])[1]
+
+  if(tipo == "factor" | tipo == "character" | tipo == "ordered"){
+    df <- df %>% mutate(mutate(across(everything(), ~ as.numeric(.)-1)))
+  }
+
   matriz <- as.matrix(df)
   res <- 0
   for (i in 1:k){
