@@ -8,7 +8,7 @@
 #' @examples
 dicionario <- function(dados){
 
-  dicionario <- data.frame(coluna = 1:(dim(dados)[2]),
+  dicionario <- data.frame(pos = 1:(dim(dados)[2]),
                            variavel = names(dados),
                            tipo = unlist(sapply(lapply(dados, class), "[[", 1)))
 
