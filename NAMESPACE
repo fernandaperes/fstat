@@ -2,6 +2,7 @@
 
 export("%>%")
 export(arred)
+export(dicionario)
 export(eta_cochranq)
 export(forest_linear)
 export(graf_obs_esp_ader)
